@@ -17,7 +17,7 @@ public class producer {
       topicOption.setRequired(true);
       op.addOption(topicOption);
 
-      Option serverOption = new Option("a", "address", true, "bootstrap server");
+      Option serverOption = new Option("b", "brokers", true, "bootstrap server");
       serverOption.setRequired(true);
       op.addOption(serverOption);
 
@@ -39,7 +39,7 @@ public class producer {
 
       // Assign topicName to string variable
       String topicName = cmd.getOptionValue("topic");
-      String addr = cmd.getOptionValue("address");
+      String addr = cmd.getOptionValue("brokers");
       Integer amount = Integer.parseInt(cmd.getOptionValue("records"));
       Integer size = Integer.parseInt(cmd.getOptionValue("recordSize"));
       System.out.printf("%s@%s\n", topicName, addr);
